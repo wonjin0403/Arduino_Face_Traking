@@ -36,7 +36,7 @@ def read_camera_frame():
 
     return frame
 
-def visual_bbox(cfg: DictConfig, frame: np.array, dets: np.array) -> tuple[np.array, int, int, int]:
+def visual_bbox(cfg: DictConfig, frame: np.array, dets: np.array) -> tuple:
     b_height = 0
     end_x, end_y, end_z = frame.shape[1]//2, frame.shape[0]//2, 0
     for b in dets:
