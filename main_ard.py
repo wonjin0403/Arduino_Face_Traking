@@ -11,7 +11,7 @@ import hydra
 from omegaconf import DictConfig, OmegaConf
 import time
 from utils.utils import check_keys, remove_prefix, load_model, get_screen, get_model, prior_box
-
+import serial 
 # Update the port to match your specific port
 ARDUINO_PORT = '/dev/cu.usbserial-14110'
 
@@ -68,16 +68,12 @@ def show_screen(cfg: DictConfig, capture: cv2.VideoCapture, net: torch.nn.Module
     _t = {'forward_pass': Timer(), 'misc': Timer()}
     current_posX, current_posY = 0, 0
 
-
-        # Display the frame
-        print(frame.shape)
-
     while cv2.waitKey(33) < 0:
         
         # Read a frame from the Arduino
-        frame = read_camera_frame()
+        # frame = read_camera_frame()
 
-        #ret, frame = capture.read()
+        ret, frame = capture.read()
 
         img = np.float32(frame)
         if resize != 1:
