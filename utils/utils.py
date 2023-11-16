@@ -26,7 +26,7 @@ def get_model(cfg: DictConfig, device: torch.device) -> torch.nn.Module:
     return net
 
 
-def prior_box(cfg: DictConfig, image_size: tuple[int, int], device: torch.device) -> torch.Tensor:
+def prior_box(cfg: DictConfig, image_size: tuple, device: torch.device) -> torch.Tensor:
     priorbox = PriorBox(cfg["model"], image_size=image_size)
     priors = priorbox.forward()
     priors = priors.to(device)
