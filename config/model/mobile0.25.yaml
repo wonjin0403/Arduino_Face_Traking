@@ -1,0 +1,11 @@
+name: 'mobilenet0.25'
+trained_model: './weights/mobilenet0.25_Final.pth' #모델 저장 경로
+min_sizes: [[16, 32], [64, 128], [256, 512]]
+steps: [8, 16, 32]
+clip: False
+variance: [0.1, 0.2]
+image_size: 640
+pretrain: False
+return_layers: {'stage1': 1, 'stage2': 2, 'stage3': 3}
+in_channel: 32
+out_channel: 64

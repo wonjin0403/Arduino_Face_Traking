@@ -1,0 +1,11 @@
+
+defaults:
+  - model: mobile0.25 #face detection 모델 선택, mobile0.25 or resnet50
+
+resolution_wide : 1920 #생성될 화면의 너비
+resolution_hight : 1080 #생성될 화면의 높이
+cpu: True #cpu를 사용할거면 True/ gpu 사용시 False
+draw_distance: Null # 얼굴의 거리를 시각화하려면 True, 얼굴 traking을 시각화하려면 False
+confidence_threshold: 0.02
+nms_threshold: 0.4
+vis_thres: 0.5
